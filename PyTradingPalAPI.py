@@ -6,6 +6,8 @@
 # -- License: GNU General Public License ------------------------------------------- -- #
 # -- ------------------------------------------------------------------------------- -- #
 
+import requests
+
 # -- Lista de funciones contenidas en este codigo para API Trading Pal ------------- -- #
 
 # -- Get Validation Token ----------------------------------------------------- ------- #
@@ -15,21 +17,17 @@
 
 def tp_token(p0_email, p1_password):
 
-    http = "www.tradingpal.com/api/auth?email="
+    http = "http://www.tradingpal.com/api/auth?email="
+    http_url = http + str(p0_email) + "&password=" + p1_password
+    http_result = requests.get(http_url)
+    data = str(http_result.json()['token'])
 
-    return DataM
+    return data
 
 
 # -- Get Actual Bid/Ask Price ------------------------------------------------- ------- #
 # -- ------------------------------------------------------------ GET /[symbol] -- 2 -- #
 # -- -------------------------------------------------------------------------- ------- #
-
-
-def tp_actual_price(p0_instrument):
-
-    http = "www.tradingpal.com/api/instruments/"
-
-    return Data
 
 
 # -- Get Historical Prices ---------------------------------------------------- ------- #
@@ -114,3 +112,4 @@ def tp_account_info(P0_Token, P1_userID):
     http = "www.tradingpal.com/api/users/"
 
     return RetJson
+
