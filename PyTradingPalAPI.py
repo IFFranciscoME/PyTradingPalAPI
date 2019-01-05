@@ -6,7 +6,7 @@
 # -- License: GNU General Public License ------------------------------------------- -- #
 # -- ------------------------------------------------------------------------------- -- #
 
-import requests
+# import requests
 
 # -- Lista de funciones contenidas en este codigo para API Trading Pal ------------- -- #
 
